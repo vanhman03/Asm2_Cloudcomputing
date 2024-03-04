@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
+  <link rel="icon" href="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp">
+    <title>
+        <%= title %>
+    </title>
+    <style>
+        .table-container {
+            max-height: 500px;
+            display: flex;
+            flex-flow: column;
+            height: 100%;
+            width: 100%;
+        }
+        .thead-modifier {
+            /* head takes the height it requires, 
+            and it's not scaled when table is resized */
+            flex: 0 0 auto;
+            width: calc(100% - 0.9em);
+        }
+        .tbody-modifier {
+            /* body takes all the remaining available space */
+            flex: 1 1 auto;
+            display: block;
+            overflow-y: scroll;
+        }
+        .tr-modifier {
+            width: 100%;
+        }
+        .thead-modifier, .tr-modifier {
+            display: table;
+            table-layout: fixed;
+        }
+
+        html,
+        body,
+        .intro {
+            height: 100%;
+        }
+
+        .gradient-custom-1 {
+            /* fallback for old browsers */
+            background: #cd9cf2;
+
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(to top, rgba(205, 156, 242, 1), rgba(246, 243, 255, 1));
+
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(147deg, #FFE53B 0%, #FF2525 100%)
+        }
+
+        table td,
+        table th {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        tbody td {
+            font-weight: 500;
+            color: black;
+        }
+
+        .retroshd {
+            color: #2c2c2c;
+            background-color: transparent;
+            letter-spacing: .05em;
+            text-shadow: 4px 4px 0px #d5d5d5, 7px 7px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .retroshd:hover {
+            text-decoration: none;
+        }
+
+        .heading-select {
+            position: absolute;
+            top: 38px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .optionbox {
+            position: absolute;
+            top: 98px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .button-select {
+            position: absolute;
+            top: 155px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px;
+        }
+
+        .optionbox select {
+            background: #E91E63;
+            color: #fff;
+            padding: 10px;
+            width: 250px;
+            height: 50px;
+            border: none;
+            font-size: 20px;
+            box-shadow: 0 5px 48px rgb(93, 15, 9);
+            outline: none;
+        }
+
+        .optionbox:before {
+            content: '\f358';
+            font-family: "Font Awesome 5 free";
+            position: absolute;
+
+            top: 0;
+            right: 0;
+
+            height: 50px;
+            width: 50px;
+            background: #E91E63;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            font-size: 30px;
+            pointer-events: none;
+
+
+        }
+
+        .optionbox:hover:before {
+
+            background: #c72059;
+
+
+        }
+
+        .btn-logout {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            color: #FF2525;
+            border-color: #FF2525;
+        }
+
+        .select-container {
+            height: 200px;
+            background-color: #FFE53B;
+        }
+    </style>
+  </head>
+    <body>
+      <h1><% title %></h1>
+      <p>Welcome to <%= title %></p>
+      <%- select_form %>
+      <%- product_cells %>
+    </body>
+  <a href="/users/logout">Logout</a>
+</html>
